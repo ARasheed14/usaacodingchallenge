@@ -14,5 +14,6 @@ I added favorite button on detail view page. The favorite button adds the food r
 For time I used the Ionic Generator and didn't get to refactor my services into the proper functionality directory.
 
 
-
+## LocalStorage from Ionic class
+I used Ionic's storage module. which uses WebSQL by default. I could have configured for localstorage but ran out of time.
 
