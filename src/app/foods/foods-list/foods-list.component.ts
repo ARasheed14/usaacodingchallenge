@@ -28,18 +28,18 @@ export class FoodsListComponent {
   getFoods(){
 
   }
+
   search(){
-    console.log(this.searchText);
+    if(!this.searchText) return;
+
     this.foodService.searchFoods(this.searchText).subscribe((data) => {
       this.foodsList = data.item;
       console.log(data);
     });
   }
+
   openFoodDetail(ndbno){
     this.navCtrl.push(FoodsDetailComponent, {ndbno:ndbno});
-  }
-  favorite(){
-
   }
 
 }

@@ -20,6 +20,7 @@ import { FoodsServiceProvider } from '../providers/foods-service/foods-service';
 import { StorageServiceProvider } from '../providers/storage-service/storage-service';
 import { ErrorHandlingServiceProvider } from '../providers/error-handling-service/error-handling-service';
 import { LoggerServiceProvider } from '../providers/logger-service/logger-service';
+import { FavoritesProvider } from '../providers/favorites/favorites';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { LoggerServiceProvider } from '../providers/logger-service/logger-servic
     FoodsServiceProvider,
     StorageServiceProvider,
     ErrorHandlingServiceProvider,
-    LoggerServiceProvider
+    LoggerServiceProvider,
+    FavoritesProvider
   ]
 })
 export class AppModule {}

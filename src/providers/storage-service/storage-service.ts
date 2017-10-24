@@ -15,13 +15,13 @@ export class StorageServiceProvider {
   constructor(public http: Http, private storage: Storage) {
     console.log('Hello StorageServiceProvider Provider');
   }
-  setItem(key, value){
+  setItem(key:string, value){
     return Observable.fromPromise(this.storage.set(key, value));
   }
-  deleteItem(key){
+  deleteItem(key:string){
     return Observable.fromPromise(this.storage.remove(key));
   }
-  getItem(key){
+  getItem(key:string){
     return Observable.fromPromise(this.storage.get(key));
   }
 }

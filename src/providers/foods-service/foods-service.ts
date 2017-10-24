@@ -53,8 +53,6 @@ export class FoodsServiceProvider {
         console.log('its in the cache');
         return Observable.of(JSON.parse(data));
       }
-    })
-    let url = this.apiUrl + `reports/?ndbno=${ndbno}&type=b&format=json&api_key=${this.apiKey}`;
-    return this.http.get(url).map(res => res.json().report);
+    });
   }
 }

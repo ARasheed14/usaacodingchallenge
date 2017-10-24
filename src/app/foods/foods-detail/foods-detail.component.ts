@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Food,Report } from "../foods";
 import { FoodsServiceProvider } from "../../../providers/foods-service/foods-service";
+import { FavoritesProvider } from "../../../providers/favorites/favorites";
 import { NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -18,13 +19,19 @@ export class FoodsDetailComponent {
   food: Food = {};
   text: string;
 
-  constructor(private foodService: FoodsServiceProvider, private navCtrl: NavController, private navParams: NavParams) {
+  constructor(
+    private favoritesService: FavoritesProvider,
+    private foodService: FoodsServiceProvider,
+    private navCtrl: NavController,
+    private navParams: NavParams) {
     console.log('Hello FoodsDetailComponent Component');
     this.text = 'Hello World';
   }
+
   ionViewDidLoad(){
     this.getReport();
   }
+
   getReport(){
     let ndbno = this.navParams.get('ndbno');
     this.foodService.getFoodDetails(ndbno).subscribe((data:Report) => {
@@ -32,7 +39,12 @@ export class FoodsDetailComponent {
       console.log(data);
     });
   }
-  favorite(){
 
+  favorite(){
+    console.log('favoriting this item:', this.food)
+    this.favoritesService.setDetailFoodFavorite(this.food).subscribe((data)=>{
+      console.log('it was added',data);
+    });
   }
+
 }

@@ -9,7 +9,7 @@
       {{food.name}}
     </ion-title>
     <ion-buttons end>
-        <button ion-button icon-only>
+        <button ion-button icon-only (click)="favorite()">
             <ion-icon name="star"></ion-icon>
         </button>
       </ion-buttons>
@@ -22,7 +22,6 @@
       <h2>Nutrients</h2>
     <ion-item *ngFor="let nutrient of food.nutrients">
       <span>{{nutrient.name}} {{nutrient.value}}{{nutrient.unit}}</span>
-
     </ion-item>
   </ion-list>
 </ion-content>
