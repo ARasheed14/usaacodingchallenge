@@ -14,18 +14,16 @@ import { StorageServiceProvider } from "../storage-service/storage-service";
 */
 @Injectable()
 export class FoodsServiceProvider {
-
+  // TODO: Place apiKey on the server to secure it.
   apiKey = 'eILhkQhgnpr4kP483hRm0VkVTxdO33dQzZ9dDzIv';
+  // TODO: Add to config file
   apiUrl = 'https://api.nal.usda.gov/ndb/';
 
-  constructor(public http: Http, private storageService: StorageServiceProvider) {
-    console.log('Hello FoodsServiceProvider Provider');
-    this.storageService.getItem('Yo').subscribe(data => {
-      console.log(data);
-    });
-  }
-  searchFoods(searchText: String): Observable<FoodList>{
+  constructor(public http: Http, private storageService: StorageServiceProvider) {}
 
+  // public methods
+  searchFoods(searchText: string): Observable<FoodList>{
+    // check to see if its in cache
     return this.storageService.getItem(searchText).flatMap(data => {
       if(data == null){
         console.log('is null');
@@ -40,7 +38,8 @@ export class FoodsServiceProvider {
       }
     });
   }
-  getFoodDetails(ndbno: String): Observable<Report>{
+  getFoodDetails(ndbno: string): Observable<Report>{
+    // check to see if its in cache
     return this.storageService.getItem(ndbno).flatMap(data => {
       if(data == null){
         console.log('is null');

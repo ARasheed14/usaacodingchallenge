@@ -24,8 +24,6 @@ export class FoodsDetailComponent {
     private foodService: FoodsServiceProvider,
     private navCtrl: NavController,
     private navParams: NavParams) {
-    console.log('Hello FoodsDetailComponent Component');
-    this.text = 'Hello World';
   }
 
   ionViewDidLoad(){
@@ -36,15 +34,11 @@ export class FoodsDetailComponent {
     let ndbno = this.navParams.get('ndbno');
     this.foodService.getFoodDetails(ndbno).subscribe((data:Report) => {
       this.food = data.food;
-      console.log(data);
     });
   }
 
   favorite(){
-    console.log('favoriting this item:', this.food)
-    this.favoritesService.setDetailFoodFavorite(this.food).subscribe((data)=>{
-      console.log('it was added',data);
-    });
+    this.favoritesService.setDetailFoodFavorite(this.food).subscribe((data)=>{});
   }
 
 }
