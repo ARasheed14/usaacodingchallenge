@@ -1,0 +1,28 @@
+<!-- Generated template for the FoodsDetailComponent component -->
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title *ngIf="food">
+      {{food.name}}
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only>
+            <ion-icon name="star"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content *ngIf="food">
+    <h1>{{food.name}}</h1>
+  <ion-list>
+      <h2>Nutrients</h2>
+    <ion-item *ngFor="let nutrient of food.nutrients">
+      <span>{{nutrient.name}} {{nutrient.value}}{{nutrient.unit}}</span>
+
+    </ion-item>
+  </ion-list>
+</ion-content>
