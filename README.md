@@ -1,26 +1,18 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+This is answer for coding challenge for USAA
 
-## How to use this template
+## How to run code.
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+run git clone https://github.com/ARasheed14/usaacodingchallenge.git
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+npm install
 
-### With the Ionic CLI:
+## Functionality not finished.
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+I added favorite button on detail view page. The favorite button adds the food report to a favorites array in the local storage, but I didn't add the functionality to pull the favorites into the component.
 
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
-```
+## Didn't refactor structure of providers
+For time I used the Ionic Generator and didn't get to refactor my services into the proper functionality directory.
 
-Then, to run it, cd into `myBlank` and run:
 
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
 
-Substitute ios for android if not on a Mac.
 
