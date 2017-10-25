@@ -7,7 +7,6 @@ import { HttpModule } from '@angular/http';
 import { IonicStorageModule, Storage } from '@ionic/storage';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 
 // Components
 

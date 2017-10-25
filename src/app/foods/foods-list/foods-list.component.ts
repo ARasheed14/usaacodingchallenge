@@ -18,7 +18,7 @@ export class FoodsListComponent {
 
   // Properties
   foodsList: FoodListItem[];
-  searchText: String;
+  searchText: string;
   text: string;
 
   constructor(private foodService: FoodsServiceProvider, private navCtrl: NavController, private navParams: NavParams) {

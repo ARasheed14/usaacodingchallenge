@@ -17,3 +17,5 @@ For time I used the Ionic Generator and didn't get to refactor my services into 
 ## LocalStorage from Ionic class
 I used Ionic's storage module. which uses WebSQL by default. I could have configured for localstorage but ran out of time.
 
+## Found two non feature related bugs
+When I ran the code later after the challenge I notieced two small bugs that were not feature related. One letter that caused an error and a configuration item that caused an error. 
